@@ -21,7 +21,7 @@ export const ThemedText = ({
   style,
   children,
 }: {
-  style: StyleProp<TextStyle>;
+  style?: StyleProp<TextStyle>;
   children: ReactNode;
 }) => {
   const { colors } = useAppTheme();

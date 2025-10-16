@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     height: 90,
     flexDirection: "column",
     borderRadius: 20,
-    width: "90%",
+    width: "100%",
   },
   bottomContainer: {
     flexDirection: "row",
