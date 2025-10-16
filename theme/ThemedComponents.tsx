@@ -6,7 +6,7 @@ export const ThemedView = ({
   style,
   children,
 }: {
-  style: StyleProp<ViewStyle>;
+  style?: StyleProp<ViewStyle>;
   children: ReactNode;
 }) => {
   const { colors } = useAppTheme();

@@ -6,6 +6,8 @@ export type AppColors = {
   bodyText: string;
   titleText: string;
   borderColor: string;
+  inverseColor: string;
+  inverseText: string;
 };
 
 export const lightColors: AppColors = {
@@ -16,6 +18,8 @@ export const lightColors: AppColors = {
   bodyText: "#17373E",
   titleText: "#000000",
   borderColor: "#212122",
+  inverseColor: "#000000",
+  inverseText: "#ffffff",
 };
 
 export const darkColors: AppColors = {
@@ -26,4 +30,6 @@ export const darkColors: AppColors = {
   bodyText: "#919392",
   titleText: "#FDFBF9",
   borderColor: "#212122",
+  inverseColor: "#ffffff",
+  inverseText: "#0000000",
 };

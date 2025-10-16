@@ -1,5 +1,6 @@
 import { useAppTheme } from "@/context/ThemeProvider";
 import { ThemedText, ThemedView } from "@/theme/ThemedComponents";
+import { useRouter } from "expo-router";
 import React from "react";
 import {
   KeyboardAvoidingView,
@@ -8,10 +9,11 @@ import {
   StyleSheet,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import CustomAppBar from "../components/CustomAppBar";
+import CustomAppBar from "../components/CustomNavBar";
 import MessageBox from "../components/MessageBox";
 const HomeScreen = () => {
   const { colors } = useAppTheme();
+  const router = useRouter();
   return (
     <ThemedView
       style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
@@ -19,7 +21,12 @@ const HomeScreen = () => {
       <SafeAreaView style={styles.container}>
         <CustomAppBar
           leftSide={
-            <Pressable style={styles.leftButton}>
+            <Pressable
+              style={styles.leftButton}
+              onPress={() => {
+                router.push("/threads");
+              }}
+            >
               <ThemedText style={{ fontSize: 18 }}>Q</ThemedText>
             </Pressable>
           }

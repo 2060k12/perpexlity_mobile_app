@@ -4,18 +4,32 @@ import { StyleSheet, View } from "react-native";
 const CustomAppBar = ({
   leftSide,
   rightSide,
+  titleOnCenter = false,
 }: {
   leftSide: ReactNode;
   rightSide: ReactNode;
+  titleOnCenter?: boolean;
 }) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.container}>
         {/*  Left Button */}
         <View>{leftSide}</View>
-
         {/* Right Button */}
-        <View>{rightSide}</View>
+        {titleOnCenter ? (
+          <View
+            style={{
+              width: "100%",
+              position: "absolute",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            {rightSide}
+          </View>
+        ) : (
+          <View>{rightSide}</View>
+        )}
       </View>
     </View>
   );

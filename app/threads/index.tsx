@@ -1,11 +1,12 @@
 import { useAppTheme } from "@/context/ThemeProvider";
 import { ThemedText, ThemedView } from "@/theme/ThemedComponents";
 import Feather from "@expo/vector-icons/Feather";
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import BottomNavBar from "../components/BottomNavBar";
-import CustomAppBar from "../components/CustomAppBar";
+import CustomAppBar from "../components/CustomNavBar";
 import IconButton from "../components/IconButton";
 import SearchBarThread from "../components/SearchBarThread";
 import Spaces from "../components/Spaces";
@@ -14,7 +15,7 @@ import ThreadContent from "../components/ThreadContent";
 const index = () => {
   const { colors } = useAppTheme();
   const [selected, setSelected] = useState<0 | 1>(0);
-
+  const router = useRouter();
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={{ flex: 1 }}>
@@ -33,7 +34,11 @@ const index = () => {
               </View>
             }
             rightSide={
-              <IconButton onPress={() => {}}>
+              <IconButton
+                onPress={() => {
+                  router.back();
+                }}
+              >
                 <Feather name="arrow-right" size={14} color={colors.text} />
               </IconButton>
             }

@@ -2,39 +2,30 @@ import { useAppTheme } from "@/context/ThemeProvider";
 import React, { ReactNode } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-const IconButton = ({
+const FloatingButton = ({
+  icon,
   onPress,
-  children,
-  isPrimaryButton = false,
 }: {
+  icon: ReactNode;
   onPress: () => void;
-  children: ReactNode;
-  isPrimaryButton?: boolean;
 }) => {
   const { colors } = useAppTheme();
+
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[
-        styles.buttonContainer,
-        isPrimaryButton
-          ? {
-              backgroundColor: colors.primary,
-            }
-          : "",
-      ]}
+      style={[styles.container, { backgroundColor: colors.inverseColor }]}
     >
-      {children}
+      {icon}
     </TouchableOpacity>
   );
 };
 
-export default IconButton;
+export default FloatingButton;
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    backgroundColor: "#313636",
-    padding: 8,
+  container: {
     borderRadius: "50%",
+    padding: 16,
   },
 });

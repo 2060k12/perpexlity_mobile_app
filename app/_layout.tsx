@@ -13,7 +13,22 @@ export default function RootLayout() {
         screenOptions={{
           headerShown: false,
         }}
-      />
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen
+          name="threads"
+          options={{
+            animation: "ios_from_right",
+          }}
+        />
+        <Stack.Screen
+          name="NewSpaceModal"
+          options={{
+            presentation: "fullScreenModal",
+            headerShown: false,
+          }}
+        />
+      </Stack>
     </AppThemeProvider>
   );
 }

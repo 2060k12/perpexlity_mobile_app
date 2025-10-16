@@ -14,7 +14,7 @@ import {
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import ChipViewHorizontal from "../components/ChipViewHorizontal";
-import CustomAppBar from "../components/CustomAppBar";
+import CustomAppBar from "../components/CustomNavBar";
 import IconButton from "../components/IconButton";
 const index = () => {
   const { colors } = useAppTheme();
